@@ -22,7 +22,7 @@ exports.register = (req, res) => {
           id: data._id,
           isAdmin: data.isAdmin,
         },
-        configs.env.SECRET_JWT,
+        configs.jwt.secret,
         {
           expiresIn: 86400,
         }
@@ -56,7 +56,7 @@ exports.login = (req, res) => {
           id: user._id,
           isAdmin: user.isAdmin,
         },
-        configs.env.SECRET_JWT,
+        configs.jwt.secret,
         {
           expiresIn: 86400,
         }
