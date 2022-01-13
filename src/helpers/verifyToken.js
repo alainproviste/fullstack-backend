@@ -9,7 +9,7 @@ function verifyToken(req, res, next) {
             message:"Missing token"
         })
     }
-    jwt.verify(token, process.env.JWT_SECRET,
+    jwt.verify(token, process.env.SECRET_JWT,
         function (error, jwtdecoded) {
             if (error) {
                 return res.status(401).send({
