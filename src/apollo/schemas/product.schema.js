@@ -5,13 +5,15 @@ module.exports = gql`
         id: ID
         title: String
         price: Int
-        description: String
+        description: String,
+        img: String
     }
     type Query {
         getProducts:[Product]
         getProduct(id:ID):Product!
     }
     type Mutation {
-        createProduct(title:String!,description: String,price:Int):Product
+        createProduct(title:String!,description: String,price:Int, img:String):Product
+        updateProduct(id:ID!,title:String!,description: String,price:Int, img:String):Product
     }
 `

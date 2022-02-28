@@ -23,7 +23,8 @@ const userSchema = new Schema({
     isAdmin: {
         type: Boolean,
         required: true,
-    }    
+    },
+    orders:[{ type: Schema.Types.ObjectId, ref: 'Order' }]
 });
 
 module.exports = mongoose.model('User', userSchema);

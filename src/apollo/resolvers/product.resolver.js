@@ -15,11 +15,15 @@ module.exports = {
                 {
                     title: args.title,
                     description: args.description,
-                    price: args.price
+                    price: args.price,
+                    img: args.img
                 }
             )
             return newProduct.save();
-      }
+        },
+        updateProduct(parent, {id, title, description, img, price}) {
+            return Product.findByIdAndUpdate(id, { title: title, description: description, img: img, price: price });
+        }
     }
 
 }
